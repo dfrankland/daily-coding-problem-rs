@@ -1,2 +1,7 @@
 # daily-coding-problem-rs
+
 Daily Coding Problem solved in Rust
+
+## Problems
+
+* [Daily Coding Problem #1 \[Easy\] - Binary Search](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=%2F%2F%20This%20problem%20was%20recently%20asked%20by%20Google.%0A%2F%2F%0A%2F%2F%20Given%20a%20list%20of%20numbers%20and%20a%20number%20%60k%60%2C%20return%20whether%20any%20two%20numbers%20from%0A%2F%2F%20the%20list%20add%20up%20to%20%60k%60.%0A%2F%2F%0A%2F%2F%20For%20example%2C%20given%20%60%5B10%2C%2015%2C%203%2C%207%5D%60%20and%20%60k%60%20of%20%6017%60%2C%20return%20true%20since%0A%2F%2F%20%6010%20%2B%207%60%20is%20%6017%60.%0A%2F%2F%0A%2F%2F%20Bonus%3A%20Can%20you%20do%20this%20in%20one%20pass%3F%0A%0Ause%20std%3A%3Acollections%3A%3AHashSet%3B%0A%0Afn%20any_two_numbers_add_up_to_k(numbers%3A%20%26%5Busize%5D%2C%20k%3A%20usize)%20-%3E%20bool%20%7B%0A%20%20%20%20let%20mut%20cache%20%3D%20HashSet%3A%3Anew()%3B%0A%0A%20%20%20%20for%20number%20in%20numbers%20%7B%0A%20%20%20%20%20%20%20%20if%20cache.contains(number)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20true%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cache.insert(k%20-%20number)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20false%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20let%20numbers%3A%20%26%5Busize%5D%20%3D%20%26%5B10%2C%2015%2C%203%2C%207%5D%3B%0A%20%20%20%20let%20k%3A%20usize%20%3D%2017%3B%0A%20%20%20%20assert_eq!(any_two_numbers_add_up_to_k(numbers%2C%20k)%2C%20true)%3B%0A%7D%0A)
